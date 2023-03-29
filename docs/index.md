@@ -95,7 +95,6 @@ Mit noFill() und noStroke() kann auch keine Füllfarb oder keine Kontur festgele
 
 
 
-
 ## 01.04.2022 – Grundstruktur setup & draw. Systemvariablen
 - [TP 2A](https://einraum-design.github.io/tp_processing_SoSe2022/TP2_A/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2022/blob/main/docs/TP2_A/sketch.js)
 - [TP 2B](https://einraum-design.github.io/tp_processing_SoSe2022/TP2_B/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2022/blob/main/docs/TP2_B/sketch.js)

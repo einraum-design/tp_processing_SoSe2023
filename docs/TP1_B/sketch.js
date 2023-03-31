@@ -1,53 +1,34 @@
 function setup() {
   
-  // erstellt Leinwand in den Massen 600px breit, 400 px hoch
-  
-  /* ich
-    bin
-    ein
-    mehrzeiliger 
-    Kommentar
-  */
-  
   createCanvas(600, 400);
-  background(200);
+  // mit Gradzahlen statt Bogenmass arbeiten
+  angleMode(DEGREES);
   
-   // Fuellfarbe 3 Parameter rot, gruen, blau --> 0 - 255
-  fill(255, 150, 0);
-  
-  // rectMode(CENTER oder CORNER)
-  // rect(XPOS, YPOS, BREITE, HOEHE)
-  rect(100, 150, 100, 120);
-  
-  // Fuellfarbe 4 Parameter rot, gruen, blau, alpha --> 0 - 255
-  fill(255, 0, 0, 100);
-  
-  ellipse(100, 150, 100, 120);
+  // background(RED[0 - 255], BLUE [0-255], GREEN[0-255]);
+  background( 200 );
   
   
- 
-  // Fuellfarbe 1 Parameter grauwert--> 0 - 255
-  fill(0);
-  
-  // Fuellfarbe 2 Parameter grauwert, alpha --> 0 - 255
-  fill(0, 90);
   noStroke();
-  // setze den Positionsreferenzpunkt: CENTER, CORNER, CORNERS
+  
+  fill(0, 0, 255);
+  // rectmode ist standartmaessig auf CORNER gestellt
+  // rectMode(CENTER); // auf CENTER aendern
+  // rect(xPos, yPos, width, height);
+  rect(100, 150, 200, 150);
+  
+  
+  // Kontur ändern:
+  stroke(255, 0, 0);
+  strokeWeight(5);
+  
+  fill(0, 0, 255, 100);
+  // Ellipsen werden standartmaessig mit dem Ursprung / Referenzpunkt in der Mitte gezeichnet (CENTER)
+  // ellipseMode CORNER stellt auf die gedankliche linke obere Ecke um
   ellipseMode(CORNER);
-  ellipse(100, 150, 100, 120);
+  ellipse(100, 150, 200, 150);
   
-  // keine Fuellfarbe
-  noFill();
-  
-  // Konturfarbe
-  stroke(0,0,255);
-  
-  // Konturstaerke
-  strokeWeight(6);
-  rect(400, 100, 200, 50)
-  
-  
-  fill(255);
-  arc(450, 250, 100, 100, radians(220), radians(120), PIE);
+  noStroke();
+  // Bogen: xPos, yPos, width, height, startangle, stopangle, MODE
+  arc(60, 60, 100, 100, 45, 360-45, PIE);
   
 }

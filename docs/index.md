@@ -95,10 +95,33 @@ Mit noFill() und noStroke() kann auch keine Füllfarb oder keine Kontur festgele
 
 
 
-## 01.04.2022 – Grundstruktur setup & draw. Systemvariablen
-- [TP 2A](https://einraum-design.github.io/tp_processing_SoSe2022/TP2_A/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2022/blob/main/docs/TP2_A/sketch.js)
-- [TP 2B](https://einraum-design.github.io/tp_processing_SoSe2022/TP2_B/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2022/blob/main/docs/TP2_B/sketch.js)
+## Grundstruktur setup & draw. Systemvariablen
+- [TP 2A](https://einraum-design.github.io/tp_processing_SoSe2023/TP2_A/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP2_A/sketch.js)
+- [TP 2B](https://einraum-design.github.io/tp_processing_SoSe2023/TP2_B/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP2_B/sketch.js)
 
+
+### function setup & draw
+
+```
+function setup(){
+
+}
+
+function draw(){
+
+}
+```
+Die beiden Funktionen sind das Grundgerüst jeder Processing Anwendung.
+Alles was im Funktionsrumpf der function setup() – zwische den geschweiften Klammern steht – wird zum Programmstart einmal ausgeführt. Hier werden alles Grundeinstellungen für das Programm gesetzt und das Canvas Elemet erstellt.
+
+```
+createCanvas(600, 400);
+
+```
+
+Nach Ablauf der function setup() wird der Inhalt der function draw() ausgeführt. 
+Alles was in der function draw() steht wird immer wieder auf's Neue ausgeführt – standartmäßig 60 Mal pro Sekunde. 
+Die function draw() beginnt meistens mit der background function, die alles aus dem vorherigen Frame übermalt und für jeden neuen Frame eine neue Zeichenfläche bereitstellt.
 
 ### Processing Variablen
 
@@ -111,4 +134,12 @@ mouseY -> Maus y - Position innerhalb vom Sketch  Zahlenwert Ganzzahlen (Integer
 width ->  Sketchbreite Zahlenwert Ganzzahlen (Integer)
 height -> Sketchhöhe Zahlenwert Ganzzahlen (Integer)
 
+
 width und height sollten verwendet werden, um Positionen von graphischen Elementen in der Anwendung unabhängig von der Fenstergröße zu berechnen.
+
+frameCount -> Zähler der nach jedem function draw Druchgang hochgezählt wird.  Zahlenwert Ganzzahlen (Integer)
+
+- Funktionen mit Rückgabetyp
+Am Ende des Funktionsaufrufs muss ein ein „return" mit dem Rückgabewert stehen. 
+die random() Funktion liefert zB. ein Fließkommerzahl zurück ...
+

@@ -290,11 +290,12 @@ Weiter Eventhandler für Maus- und TastaturEvents sind in der Referenz zu finden
 Eine kurze Übersicht zu den HTML Basics findet ihr hier: https://www.w3schools.com/html/html_basic.asp
 
 Um einen p5js Canvas an eine bestimmte Stelle im HTML Aufbau der Webseite zu platzieren ist der einfachste Weg:
-- Ein div Element mit einer ID an der gewünschten Stelle platzieren. 
+- Ein div Element mit einer ID an der gewünschten Stelle in der index.html Datei platzieren. 
 ```
 <div id="myCanvas"></div>
 ```
-- im p5js sketch angeben, dieses div als parent für das canvas Element bestimmen:
+
+- im p5js Sketch angeben, dieses div als parent für das canvas Element bestimmen:
 ```
 // Canvas erstellen:
 let cnv = createCanvas(800, 600);

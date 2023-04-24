@@ -236,3 +236,87 @@ else {
     // wenn alle Bedingungen nicht erfüllt waren, wird der else Block ausgeführt
 }
 ```
+
+## 21.04.2023 – Event Listener & Erweiterung if-Bedingungen
+- [TP_5A](https://einraum-design.github.io/tp_processing_SoSe2023/TP5_A/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP5_A/sketch.js)
+- [TP_5B](https://einraum-design.github.io/tp_processing_SoSe2023/TP5_B/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP5_B/sketch.js)
+
+
+„Schaltflächen" innerhalb des Canvas Elements lassen sich in p5js auf die Weise erstellen, dass abgefragt wird, ob der Cursor über der Position der definierten Fläche ist.
+
+Bei rechteckigen Buttons lässt sich von allen vier Seiten abfragen, 
+Ob die Maus-X-Position größer als die linke Seite und kleiner als die rechte Kantenposition des Rechtecks ist. Analog dazu Ober- und Unterkante des Rechtecks.
+
+```
+if (mouseX >= xButton && 
+    mouseX <= xButton + wButton && 
+    mouseY >= yButton && 
+    mouseY <= yButton + hButton) {
+        // Maus ist über dem Rechteck
+}
+```
+
+Bei einem Kreis kann man einfach den Abstand des Cursors zum Mittelpunkt des Kreises berechnen und daran den Status festlegen.
+
+```
+// mit der dist() funktion den Abstand 
+// zwischen Mauskoordinaten und Button Mittelpunkt berechnen:
+float cursorToEllipseCente = dist(mouseX, mouseY, xCircleButton, yCircleButton);
+
+if (cursorToEllipseCente < diameterCircleButton/2) {
+    // Maus ist über dem Kreis
+}
+```
+
+Ein „hover“ Effekt für die Schaltflächen lässt sich erstellen, indem in der function draw – also in jedem Frame – abgefragt wird ob die Maus über der Fläche ist und die Darstellung damit verändert wird. 
+
+
+Soll sich der Status des Buttons auf ein Event (zB. Click) hin umschalten, muss beachtet werden, dass der Wechsel nicht innerhalb der void draw mehrfach ausgeführt wird.
+Deshalb gibt es Event Händler, die auf bestimmte Events hin jeweils einmal ausgeführt werden. Diese stehen außerhalb der function setup() und der function draw().
+```
+// wird in dem Moment aufgerufen, wenn die Maustaste gedrückt wird.
+void mousePressed() {
+    // der Inhalt im Funktionsrumpf wird pro Click einmal ausgeführt.
+}
+```
+
+Weiter Eventhandler für Maus- und TastaturEvents sind in der Referenz zu finden.
+
+
+## 21.04.2023 – HTML - Grundstruktur jeder Webseite
+- [TP_6A](https://einraum-design.github.io/tp_processing_SoSe2023/TP6_A/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP6_A/sketch.js)
+- [TP_6B](https://einraum-design.github.io/tp_processing_SoSe2023/TP6_B/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP6_B/sketch.js)
+
+Eine kurze Übersicht zu den HTML Basics findet ihr hier: https://www.w3schools.com/html/html_basic.asp
+
+Um einen p5js Canvas an eine bestimmte Stelle im HTML Aufbau der Webseite zu platzieren ist der einfachste Weg:
+- Ein div Element mit einer ID an der gewünschten Stelle platzieren. 
+```
+<div id="myCanvas"></div>
+```
+- im p5js sketch angeben, dieses div als parent für das canvas Element bestimmen:
+```
+// Canvas erstellen:
+let cnv = createCanvas(800, 600);
+// Das Element mit der ID "myCanvas" als Elternobjekt setzen:
+cnv.parent("myCanvas");
+```
+
+Im p5js Sketch lassen sich beliebig weitere HTML Elemente erstellen. Der Vorteil der HTML Element ist, dass sie im Gegensatz von auf dem Canvas gezeichneten Formen direkte Event Listener haben. Das heißt, dass wir direkt auf MouseOver oder Click reagiert werden kann. 
+Beispiel Button:
+
+```
+// Canvas erstellen:
+let button = createButton("click me");
+// An HTML Objekte kann direkt ein EventListener gehängt werden. Auf jeden Mausklick auf den button wird ausgeführt, wass in den Klammer angegeben wird.
+button.mousePressed( /* to do */ );
+```
+
+In den Klammern vom EventListener kann entweder eine *anonyme Funktion* oder ein Funktionsname angegeben werden:
+```
+// anonyme Funktion:
+button.mousePressed( ()=> { console.log("button wurde geklickt");} );
+
+// Funktionsaufruf
+button.mousePressed(meineFunktion); // meineFunktion(); muss dann im Programm definiert werden
+```

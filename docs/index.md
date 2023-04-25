@@ -292,11 +292,13 @@ Eine kurze Übersicht zu den HTML Basics findet ihr hier: [www.w3schools.com](ht
 
 Um einen p5js Canvas an eine bestimmte Stelle im HTML Aufbau der Webseite zu platzieren ist der einfachste Weg:
 - Ein div Element mit einer ID an der gewünschten Stelle in der index.html Datei platzieren.
+
 ```
 <div id="myCanvas"></div>
 ```
 
 - im p5js Sketch angeben, dieses div als parent für das canvas Element bestimmen:
+
 ```
 // Canvas erstellen:
 let cnv = createCanvas(800, 600);

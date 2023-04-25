@@ -287,11 +287,11 @@ Weiter Eventhandler für Maus- und TastaturEvents sind in der Referenz zu finden
 - [TP_6A](https://einraum-design.github.io/tp_processing_SoSe2023/TP6_A/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP6_A/sketch.js)
 - [TP_6B](https://einraum-design.github.io/tp_processing_SoSe2023/TP6_B/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP6_B/sketch.js)
 
-Eine kurze Übersicht zu den HTML Basics findet ihr hier: https://www.w3schools.com/html/html_basic.asp
+Eine kurze Übersicht zu den HTML Basics findet ihr hier: [www.w3schools.com](https://www.w3schools.com/html/html_basic.asp)
+
 
 Um einen p5js Canvas an eine bestimmte Stelle im HTML Aufbau der Webseite zu platzieren ist der einfachste Weg:
 - Ein div Element mit einer ID an der gewünschten Stelle in der index.html Datei platzieren.
-
 ```
 <div id="myCanvas"></div>
 ```

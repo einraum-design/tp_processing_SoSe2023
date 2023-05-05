@@ -324,3 +324,72 @@ button.mousePressed( ()=> { console.log("button wurde geklickt");} );
 // Funktionsaufruf
 button.mousePressed(meineFunktion); // meineFunktion(); muss dann im Programm definiert werden
 ```
+
+## 05.05.2023 – Videos & Sounds
+- [TP 7A](https://einraum-design.github.io/tp_processing_SoSe2023/TP7_A/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP7_A/sketch.js)
+- [TP 7B](https://einraum-design.github.io/tp_processing_SoSe2023/TP7_B/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP7_B/sketch.js)
+
+Video können als eigenständiges HTML Element in eine Webseite eingebunden werden. 
+Ein Vidoe Element lässt sich mit folgender Zeile in p5js erstellen:
+```
+video = createVideo("assets/launch2.mp4");
+// es können auch Steuerungselemente beim HTML Video eingeblendet werden:
+video.showControls(true);
+```
+
+Wenn das Video allerdings auf das canvas Element gezeichnet werden soll, muss trotzdem ein Video Element erstellt werden. Hier wird das video allerdings im HTML ausgeblendent und dann nur auf den inhalt des Videoplayer zugegriffen.
+Das Video kann dann mit der image funktion auf das Canvas Element gezeichnet werden:
+```
+video = createVideo("assets/launch2.mp4");
+video.hide();
+
+// innerhalb der function draw()
+image(video, 0, 0);
+```
+
+MediaPlayer habe haben eigene Eventhandler, über die auf zB. Ende des Videos reagiert werden kann: 
+```
+// Listener der aufgerufen wird, wenn ein Video zu Ende gespielt ist
+video.onended(tue_etwas);
+
+// die function "tue_etwas" muss dann noch außerhalb der function setup() definiert werden
+function tue_etwas(elt){
+  console.log("Video ist zu Ende - schlafen gehen");
+  // zB. Videoelement ausblenden ...
+  elt.hide();
+}
+```
+
+
+## 05.05.2023 – Transformationen (verschieben, rotieren, skalieren)
+- [TP 8.1A](https://einraum-design.github.io/tp_processing_SoSe2023/TP8_A/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP8_A/sketch.js)
+- [TP 8.2A](https://einraum-design.github.io/tp_processing_SoSe2023/TP82_A/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP82_A/sketch.js)
+- [TP 8.1B](https://einraum-design.github.io/tp_processing_SoSe2023/TP8_B/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP8_B/sketch.js)
+- [TP 8.2B](https://einraum-design.github.io/tp_processing_SoSe2023/TP82_B/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP82_B/sketch.js)
+
+Um Zeichenelemente im Processing Sketch zu bewegen, gibt es einige Transformations Tools.
+
+Transformationen werden immer vom Nullpunkt des Koordinatensystems ausgeführt.
+Zu Beginn der void draw ist das Koordinatensystem immer in der linken oberen Ecke.
+Wird ein rotate(float Winkel) Befehl ausgeführt wird also alles um diese Ecke rotiert. 
+
+Um um einen anderen Mittelpunkt rotieren zu können, muss zuerst das Zeichenkoordinatensystem 
+an den gewünschten Mittelpunkt verschoben werden.
+Die geschieht über den translate(float x, float y) Befehl. Translate kann das Zeichenkoordinatensystem
+in x und y Richtung verschieben.
+
+Als drittes Transformationstool gibt es den scale(float x, float y) Befehl. 
+Dieser Skaliert das Koordinatensystem. Scale funktioniert mit positiven wie auch negativen Werten. Damit lassen sich Inhalte auch spiegeln. 
+
+Es können beliebig viele Transformationen hintereinander ausgeführt werden. 
+Jede Verschiebung und Rotation wird aber auf die vorherigen aufaddiert!
+Wenn das Koordinatensystem mit rotate() verdreht wurde und anschließend wieder 
+ein translate ausgeführt wird, wird das Koordinatensystem in die rotierte Richtung verschoben.
+
+Bei jedem Neustart der void draw() wird das Koordinatensystem wieder auf das Standart Koordinatensystem zurück gesetzt.
+
+Das Zeichenkoordiantensystem lässt sich innerhalb der void draw wieder auf Standartposition, Rotation und Skalierung zurücksetzen:
+
+```
+ resetMatrix();
+```

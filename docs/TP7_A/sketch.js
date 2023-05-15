@@ -15,7 +15,7 @@ function setup() {
   video = createVideo("assets/launch2.mp4");
 
   // setze feste Positon vom Videoplayer
-  video.position(200, 200);
+  //video.position(200, 200);
 
   video.onended(() => { console.log("Video ist zuende" )});
 

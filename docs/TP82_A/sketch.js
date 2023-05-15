@@ -8,7 +8,11 @@ function draw() {
 
   // Koordinaten System auf 
   // Mittelpunkt der Uhr verschieben
-  translate(width/2, height/2);
+  translate(mouseX, mouseY);
+
+  // skalierung von der Uhr um die Mitte:
+  scale(0.5, 0.5);
+
   stroke(0);
   ellipse(0, 0, 400);
 
@@ -44,7 +48,16 @@ function draw() {
   // Koordinantesystem wieder auf Zustand vom letzen push() zurücksetzen
   pop();
 
-  // hour() -> int - aktuelle Stundenzahl 0 - 23
+  push();
+ // hour() -> int - aktuelle Stundenzahl 0 - 23
+ console.log(hour());
+  let hourRotation = map(hour() + minute()/60.0   ,0, 24 , 0, 720);
+  rotate(hourRotation);
+  strokeWeight(8);
+  stroke(0);
+  line(0, 0, 0, -150);
+
+  pop();
 
 
 

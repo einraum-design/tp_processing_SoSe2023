@@ -26,6 +26,7 @@ person.nachname = "Schmitt";
 person.alter = 25;
 person.sex = "male";
 person.hobbies = ["Sport", "malen", "Kino"];
+person["sternzeichen"] = "Stier";
 
 // Ball Objekt mit Eigenschaften initiieren
 let ball = {

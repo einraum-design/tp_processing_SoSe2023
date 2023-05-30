@@ -49,6 +49,8 @@ function draw() {
     ellipse(counter * 50, height/2, 40, 40);
   }
 
+  //for(let i = 0; i<10; i++){}
+
 
 
 

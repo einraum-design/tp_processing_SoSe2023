@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      /*css regeln im head */
+      h1, h2, h3, h4, p {
+        font-family: 'Merriweather Sans', Arial, Helvetica, sans-serif
+      }
+      h1 {
+        font-weight: lighter;
+      }
+      a {
+        color: #79a3ff;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* . -> Klasse .rahmen alle elemente mit der class="rahmen" */
+      .rahmen {
+        border: 1px solid #000;
+      }
+      .box {
+        max-width: 600px;
+      }
+
+      /* ids werden mit dem # gekennzeichnet zb: #derText */
+      #derText {
+        font-family: serif;
+      }
+
+      #footer {
+        background-color: black;
+        height: 100px;
+        margin: 0px 0px 0px 0px;
+      }
+      /* alle p Elemente innerhalb vom footer sollen weiße Schriftfarbe haben */
+      #footer p {
+        color: rgb(255, 255, 255);
+      }
+    </style>
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <div id="header">
+
+    </div>
+    <div id="content">
+      <h1 style="color: rgb(255, 0, 157)">ich bin eine überschrift</h1>
+      <h1>noch eine h1 überschrift</h1>
+      <div class="rahmen box">
+        <p id="derText" style="padding-left: 20px; background-color: #ff0000;" class="rahmen">text <span style="font-style: italic;">lorem ipsum</span> ...  asdjfhöasdf lköjasdlkfjasdlkj<br />flöaksdflökasdjflkjasdlökfj alsökdjflkasdflökja sdlkfja sldköfljas dölfjalsöfj laksdflk asdjfl kasdlkf öasl flsöjd flökasjdf lökjaslfö asdlf lskdf lköasjdfölkja slkfjalsökdjf lökasdflk jsadlkfj</p>
+      </div>
+    </div>
+    <div id="footer">
+      <p><a href="imprint.html">Impressum</a> und Datenschutzerklärung</p>
+    </div>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>

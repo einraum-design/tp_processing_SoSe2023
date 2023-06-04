@@ -70,9 +70,28 @@ function draw() {
   fill(0, 0, 255);
   ellipse(cx, cy, 50, 50);
 
-    save("meinsvg.svg");
-  noLoop();
+   // save("meinsvg.svg");
+  //noLoop();
+
+
+
+
+  randomEllipse(mouseX, mouseY, 50);
+
+
 }
+
+function randomEllipse(_x, _y, _d){
+
+  // for( VARIABLENDEFINITION; BEDINGUNG; INKREMENTOR){  CODE }
+
+  for(let i = 0; i<1000; i++){
+    ellipse(_x + random(-_d, _d), _y + random(-_d, _d), 1);
+  }
+  
+}
+
+
 
 // Definition einer eigenen Funktion
 // function FUNKTIONSNAME ( PARAMETER ) { CODE }

@@ -466,8 +466,8 @@ Als Parameter werden jedoch 3 Teile (statt nur der Bedingung) erwartet.
   }
 ```
 
-## 19.05.2022 – functions
-- [TP 11](https://einraum-design.github.io/tp_processing_SoSe2023/TP_11/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP_11/sketch.js)
+## 19.05.2023 – functions
+- [TP 11](https://einraum-design.github.io/tp_processing_SoSe2023/TP11/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP11/sketch.js)
 
 
 Processing bietet einige vordefinierte Funktionen, wie zb. die ellipse(), map(), fill() … Funktionen.
@@ -512,3 +512,43 @@ Bei Funktionsaufruf wird alles was im Rumpf steht einfach ausgeführt und danach
 - Funktionen mit Rückgabetyp
 Am Ende des Funktionsaufrufs muss ein ein „return" mit dem Rückgabewert stehen. 
 die random() Funktion liefert zB. ein Fließkommerzahl zurück ...
+
+
+## 02.06.2023 – CSS
+- [TP 12A](https://einraum-design.github.io/tp_processing_SoSe2023/TP12_A/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP12_A/sketch.js)
+- [TP 12B](https://einraum-design.github.io/tp_processing_SoSe2023/TP12_B/index.html) [(--> Code)](https://github.com/einraum-design/tp_processing_SoSe2023/blob/main/docs/TP12_B/sketch.js)
+
+Mit CSS (cascading style sheets) lasse sich html Seiten stylen. Im den CSS Angaben werden Farben, Größen, Abstände, ... eingestellt. 
+
+CSS Regeln können punktuell direkt im HTML angegeben werden:
+```
+<h1 style="color: #ff0000;">Überschrift</h1>
+```
+
+oder im Headerbereich der HTML Seite.
+```
+<html>
+    <head>
+        <style>
+            h1 {
+                color: #ff0000;
+            }
+        </style>
+    </head>
+    <body>
+        ...
+    </body>
+</html>
+```
+
+oder aus einer separaten Datei geladen werden (dies hat den Vorteil, dass die Datein für mehrere HTML Seite genutzt werden kann):
+```
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        ...
+    </body>
+</html>
+```

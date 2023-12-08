@@ -310,7 +310,7 @@ Im p5js Sketch lassen sich beliebig weitere HTML Elemente erstellen. Der Vorteil
 Beispiel Button:
 
 ```
-// Canvas erstellen:
+// Button erstellen:
 let button = createButton("click me");
 // An HTML Objekte kann direkt ein EventListener gehängt werden. Auf jeden Mausklick auf den button wird ausgeführt, wass in den Klammer angegeben wird.
 button.mousePressed( /* to do */ );
